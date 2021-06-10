@@ -106,3 +106,50 @@
         margin-left: 19px;
     }
 }
+
+.popup {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.edit-form {
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 36px;
+    position: relative;
+}
+
+.edit-form__container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 54px;
+    margin-bottom: 48px;
+}
+
+.edit-form__title {
+    margin: 0;
+}
+
+.edit-form__close-button {
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 40px;
+    height: 40px;
+    background-image: url("../images/Close Icon.png");
+    background-size: cover;
+}
+
+.popup_opened {
+    display: flex;
+}
