@@ -16,140 +16,47 @@
 @import url(../blocks/profile/__description/profile__description.css);
 @import url(../blocks/profile/__main/profile__main.css);
 @import url(../blocks/elements/elements.css);
-
-.elements {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-@media screen and (max-width: 890px) {
-    .elements {
-        flex-direction: column;
-        flex-wrap: nowrap;
-    }
-}
-
-.elements__element {
-    border-radius: 10px;
-    background: red;
-    width: 282px;
-    margin-right: 17px;
-    margin-bottom: 17px;
-}
-
-.elements__element:nth-child(3n) {
-    margin-right: 0;
-}
-
-@media screen and (max-width: 890px) {
-    .elements__element {
-        margin: 0 auto;
-        margin-bottom: 20px;
-    }
-
-    .elements__element:nth-child(3n) {
-        margin: 0 auto;
-        margin-bottom: 20px;
-    }
-}
+@import url(../blocks/elements/__element/elements__element.css);
+@import url(../blocks/elements/__pic/element__pic.css);
+@import url(../blocks/elements/__info/elements__info.css);
+@import url(../blocks/elements/__text/elements__text.css);
+@import url(../blocks/elements/__title/elements__title.css);
+@import url(../blocks/elements/__like/elements__like.css);
+@import url(../blocks/footer/__text/footer__text.css);
+@import url(../blocks/popup/popup.css);
+@import url(../blocks/edit-form/edit-form.css);
+@import url(../blocks/edit-form/__container/edit-form__container.css);
+@import url(../blocks/edit-form/__title/edit-form__title.css);
+@import url(../blocks/edit-form/__close-button/edit-form__close-button.css);
+@import url(../blocks/popup/_opened/popup_opened.css);
+@import url(../blocks/edit-form/__form/edit-form__form.css);
 
 
-.elements__pic {
-    border-radius: 10px 10px 0 0;
-    height: 282px;
-    width: 282px;
-}
-.elements__info {
-    height: 80px;
-    background-color: white;
-    border-radius: 10px;
-    display: flex;
-}
-
-.elements__text {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin: 25px 15px 31px 21px;
-    flex: 1;
-}
-
-.elements__title {
-    font-size: 24px;
-    line-height: 29px;
-    font-weight: 900;
-    padding: 0;
-    color: black;
-    margin: 0;
-}
-
-.elements__like {
-    background-image: url("../images/like.svg");
-    height: 19px;
-    width: 22px;
-}
-
-.footer__text {
-    color: #545454;
+.edit-form__submit-button {
+    background-color: black;
     font-size: 18px;
     font-weight: 400;
     line-height: 22px;
-    margin-top: 67px;
-    margin-bottom: 60px;
-}
-
-@media screen and (max-width: 890px) {
-    .footer__text {
-        margin-top:48px;
-        margin-bottom: 36px;
-        margin-left: 19px;
-    }
-}
-
-.popup {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    align-items: center;
-    justify-content: center;
-    display: none;
-}
-
-.edit-form {
-    background-color: white;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 36px;
-    position: relative;
-}
-
-.edit-form__container {
-    display: flex;
-    flex-direction: column;
-    margin-top: 54px;
-    margin-bottom: 48px;
+    color: white;
+    text-align: center;
+    padding: 14px 0 14px 0;
 }
 
 .edit-form__title {
-    margin: 0;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 29px;
 }
 
-.edit-form__close-button {
-    position: absolute;
-    top: -40px;
-    right: -40px;
-    width: 40px;
-    height: 40px;
-    background-image: url("../images/Close Icon.png");
-    background-size: cover;
+.edit-form__input {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    border: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 13px 0 13px 0;
 }
 
-.popup_opened {
-    display: flex;
+.edit-form__input:last-child {
+    margin-top: 14px;
 }

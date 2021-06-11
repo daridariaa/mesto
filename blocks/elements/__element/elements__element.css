@@ -1,0 +1,23 @@
+.elements__element {
+    border-radius: 10px;
+    background: red;
+    width: 282px;
+    margin-right: 17px;
+    margin-bottom: 17px;
+}
+
+.elements__element:nth-child(3n) {
+    margin-right: 0;
+}
+
+@media screen and (max-width: 890px) {
+    .elements__element {
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+
+    .elements__element:nth-child(3n) {
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+}
