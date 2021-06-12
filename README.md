@@ -10,4 +10,4 @@ HTML, CSS, Javascript
 
 ### Ссылка на проект в GitHub Pages
 
-
+https://daridariaa.github.io/mesto/
