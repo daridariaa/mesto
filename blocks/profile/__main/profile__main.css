@@ -1,8 +1,10 @@
 .profile__main {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
+    flex: 1;
+    overflow: hidden;
 }
 
 @media screen and (max-width: 768px) {

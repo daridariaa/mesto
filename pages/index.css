@@ -55,8 +55,15 @@
     border: 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     padding: 13px 0 13px 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .edit-form__input:last-child {
     margin-top: 14px;
+}
+
+.profile__name-wrapper {
+    overflow: hidden;
 }

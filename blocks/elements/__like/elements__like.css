@@ -2,4 +2,6 @@
     background-image: url("../../../images/like.svg");
     height: 19px;
     width: 22px;
+    padding-right: 15px;
+    background-repeat: no-repeat;
 }
