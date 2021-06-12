@@ -1,0 +1,21 @@
+.edit-form__submit-button {
+    background-color: black;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 22px;
+    color: white;
+    text-align: center;
+    padding: 14px 0 14px 0;
+    cursor: pointer;
+}
+
+.edit-form__submit-button:hover {
+    opacity: 0.8;
+}
+
+@media screen and (max-width: 768px) {
+    .edit-form__submit-button {
+        font-size: 14px;
+        line-height: 17px;
+    }
+}

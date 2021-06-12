@@ -30,40 +30,9 @@
 @import url(../blocks/edit-form/__close-button/edit-form__close-button.css);
 @import url(../blocks/popup/_opened/popup_opened.css);
 @import url(../blocks/edit-form/__form/edit-form__form.css);
-
-
-.edit-form__submit-button {
-    background-color: black;
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 22px;
-    color: white;
-    text-align: center;
-    padding: 14px 0 14px 0;
-}
-
-.edit-form__title {
-    font-weight: 900;
-    font-size: 24px;
-    line-height: 29px;
-}
-
-.edit-form__input {
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 17px;
-    border: 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-    padding: 13px 0 13px 0;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-}
-
-.edit-form__input:last-child {
-    margin-top: 14px;
-}
-
-.profile__name-wrapper {
-    overflow: hidden;
-}
+@import url(../blocks/edit-form/__submit-button/edit-form__submit-button.css);
+@import url(../blocks/edit-form/__input/edit-form__input.css);
+@import url(../blocks/profile/__name-wrapper/profile__name-wrapper.css);
+@import url(../blocks/edit-form/__input/edit-form__input.css);
+@import url(../blocks/edit-form/__submit-button/edit-form__submit-button.css);
+@import url(../blocks/elements/__like/_active/elements__like_active.css);

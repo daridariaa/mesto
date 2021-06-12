@@ -4,4 +4,9 @@
     width: 22px;
     padding-right: 15px;
     background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.elements__like:hover {
+    opacity: 0.5;
 }

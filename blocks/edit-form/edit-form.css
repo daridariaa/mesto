@@ -8,3 +8,10 @@
     height: 330px;
     width: 430px;
 }
+
+@media screen and (max-width: 768px) {
+    .edit-form {
+        width: 282px;
+        height: 322px;
+    }
+}

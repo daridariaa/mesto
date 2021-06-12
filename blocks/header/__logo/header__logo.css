@@ -7,6 +7,10 @@
     background-size: contain;
 }
 
+.header__logo:hover {
+    opacity: 0.5;
+}
+
 @media screen and (max-width: 768px) {
     .header__logo{
         margin-top: 28px;

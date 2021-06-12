@@ -5,3 +5,9 @@
     justify-content: space-between;
     flex: 1;
 }
+
+@media screen and (max-width: 768px) {
+    .edit-form__form {
+        padding: 22px;
+    }
+}
