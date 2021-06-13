@@ -1,17 +1,15 @@
 .edit-form {
-    background-color: white;
-    border-radius: 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    position: relative;
-    height: 330px;
-    width: 430px;
+    flex: 1;
+    min-height: 259px;
+    margin: 34px 36px 37px 36px;
 }
 
 @media screen and (max-width: 768px) {
     .edit-form {
-        width: 282px;
-        height: 322px;
+        margin: 25px 22px 25px 22px;
+        min-height: 272px;
     }
 }

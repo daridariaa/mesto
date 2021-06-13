@@ -5,39 +5,30 @@ let profileName = document.querySelector('.profile__name');
 let profileOccupation = document.querySelector('.profile__description');
 let nameInput = document.querySelector('.edit-form__name');
 let occupationInput = document.querySelector('.edit-form__occupation');
-let submitButton = document.querySelector('.edit-form__submit-button');
-let popupOpened = false;
+let editProfileForm = document.querySelector('.edit-form__form');
+
 
 function openPopup() {
-    nameInput.value = profileName.innerHTML;
-    occupationInput.value = profileOccupation.innerHTML;
+    nameInput.value = profileName.textContent;
+    occupationInput.value = profileOccupation.textContent;
     popup.classList.add('popup_opened');
-    popupOpened = true;
-
 }
-
-editProfileButton.addEventListener('click', openPopup);
 
 function closePopup() {
     popup.classList.remove('popup_opened');
-    popupOpened = false;
 }
 
-closePopupButton.addEventListener('click', closePopup);
-
-
 function submitPopup() {
-    profileName.innerHTML = nameInput.value;
-    profileOccupation.innerHTML = occupationInput.value;
+    profileName.textContent = nameInput.value;
+    profileOccupation.textContent = occupationInput.value;
     closePopup();
 }
 
-submitButton.addEventListener('click', submitPopup);
-document.addEventListener('keyup', handleEnter);
-
-function handleEnter(event) {
-    if (event.key === 'Enter' && popupOpened)  {
-       event.preventDefault();
-       submitPopup();
-    }
+function handleSubmit(event) {
+    event.preventDefault();
+    submitPopup();
 }
+
+editProfileButton.addEventListener('click', openPopup);
+closePopupButton.addEventListener('click', closePopup);
+editProfileForm.addEventListener('submit', handleSubmit);

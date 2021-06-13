@@ -3,6 +3,7 @@
     flex-direction: row;
     align-items: baseline;
     width: 550px;
+    overflow: hidden;
 }
 
 @media screen and (max-width: 768px) {

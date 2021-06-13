@@ -8,8 +8,9 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+    margin-bottom: 14px;
 }
 
 .edit-form__input:last-child {
-    margin-top: 14px;
+    margin-top: 0;
 }
