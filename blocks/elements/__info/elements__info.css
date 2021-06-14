@@ -1,5 +1,4 @@
 .elements__info {
-    height: 80px;
     background-color: white;
     display: flex;
     border-bottom-left-radius: 10px;
@@ -9,4 +8,6 @@
     align-items: center;
     flex: 1;
     overflow: hidden;
+    padding-top: 25.5px;
+    padding-bottom: 25.5px;
 }

@@ -8,6 +8,7 @@
     background-position: center;
     border-radius: 2px;
     cursor: pointer;
+    background-color: transparent;
 }
 
 .profile__add-button:hover {
