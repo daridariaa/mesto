@@ -5,7 +5,7 @@ let profileName = document.querySelector('.profile__name');
 let profileOccupation = document.querySelector('.profile__description');
 let nameInput = document.querySelector('.edit-form__name');
 let occupationInput = document.querySelector('.edit-form__occupation');
-let editProfileForm = document.querySelector('.edit-form__form');
+let editProfileForm = document.querySelector('.edit-form');
 
 
 function openPopup() {
