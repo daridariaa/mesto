@@ -72,6 +72,13 @@ function createCard(name, link, toFront) {
         }
     );
 
+    const deleteButton = cardElement.querySelector('.elements__delete-button');
+    deleteButton.addEventListener('click', function() {
+        const card = deleteButton.closest('.elements__element');
+        card.remove();
+        }
+    );
+
     if (toFront) {
         elements.prepend(cardElement);
     } else {
