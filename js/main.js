@@ -12,7 +12,7 @@ const elements = document.querySelector('.elements');
 const addPhotoButton = document.querySelector('.profile__add-button');
 const photoNameInput = document.querySelector('.edit-form__photo-title');
 const photoLinkInput = document.querySelector('.edit-form__photo-link');
-const addPhototForm = document.querySelector('.add-photo-form');
+const addPhotoForm = document.querySelector('.add-photo-form');
 
 const initialCards = [
     {
@@ -60,15 +60,28 @@ function submitPopup() {
     closePopup();
 }
 
-function submitAddPhotoForm(event) {
-    event.preventDefault();
+function createCard(name, link, toFront) {
     const cardElement = cardTemplate.cloneNode(true);
 
-    cardElement.querySelector('.elements__pic-image').src = photoLinkInput.value;
-    cardElement.querySelector('.elements__pic-image').alt = photoNameInput.value;
-    cardElement.querySelector('.elements__title').textContent = photoNameInput.value;
+    cardElement.querySelector('.elements__pic-image').src = link;
+    cardElement.querySelector('.elements__pic-image').alt = name;
+    cardElement.querySelector('.elements__title').textContent = name;
 
-    elements.prepend(cardElement);
+    cardElement.querySelector('.elements__like').addEventListener('click', function (evt) {
+            evt.target.classList.toggle('elements__like_active');
+        }
+    );
+
+    if (toFront) {
+        elements.prepend(cardElement);
+    } else {
+        elements.append(cardElement);
+    }
+}
+
+function submitAddPhotoForm(event) {
+    event.preventDefault();
+    createCard(photoNameInput.value, photoLinkInput.value, true);
     closePopup();
 }
 
@@ -89,15 +102,10 @@ closePopupButtons.forEach(function(button){
 
 editProfileForm.addEventListener('submit', handleSubmit);
 addPhotoButton.addEventListener('click', openAddPhotoForm);
-addPhototForm.addEventListener('submit', submitAddPhotoForm);
+addPhotoForm.addEventListener('submit', submitAddPhotoForm);
 
 initialCards.forEach(function(card) {
-    const cardElement = cardTemplate.cloneNode(true);
-
-    cardElement.querySelector('.elements__pic-image').src = card.link;
-    cardElement.querySelector('.elements__pic-image').alt = card.name;
-    cardElement.querySelector('.elements__title').textContent = card.name;
-
-    elements.append(cardElement);
+    createCard(card.name, card.link, false)
 });
+
 
