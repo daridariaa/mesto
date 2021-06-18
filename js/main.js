@@ -125,5 +125,3 @@ addPhotoForm.addEventListener('submit', submitAddPhotoForm);
 initialCards.forEach(function(card) {
     createCard(card.name, card.link, false)
 });
-
-
