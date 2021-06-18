@@ -43,6 +43,7 @@
     max-height: 75vh;
     width: auto;
     background-color: transparent;
+    border-radius: 0;
 }
 
 .photo-expanded__title {
@@ -52,4 +53,9 @@
     color: #FFFFFF;
     margin: 0;
     padding-top: 10px;
+}
+
+.photo-expanded__image {
+    max-height: 75vh;
+    max-width: 75vw;
 }
