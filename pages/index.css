@@ -36,6 +36,7 @@
 @import url(../blocks/elements/__pic-image/elements__pic-image.css);
 @import url(../blocks/popup/__container/popup__container.css);
 @import url(../blocks/elements/__delete-button/elements__delete-button.css);
-@import url(../blocks/photo-expanded/__container/photo-expanded__container.css);
+@import url(../blocks/photo-expanded/photo-expanded.css);
 @import url(../blocks/photo-expanded/__title/photo-expanded__title.css);
 @import url(../blocks/photo-expanded/__image/photo-expanded__image.css);
+@import url(../blocks/photo-expanded/__close-button/photo-expanded__close-button.css);

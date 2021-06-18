@@ -1,0 +1,25 @@
+.photo-expanded__close-button {
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 32px;
+    height: 32px;
+    background-image: url("../../../images/close-icon.svg");
+    background-size: cover;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+}
+
+.photo-expanded__close-button:hover {
+    opacity: 0.5;
+}
+
+@media screen and (max-width: 768px) {
+    .photo-expanded__close-button {
+        width: 22px;
+        height: 22px;
+        top: -39px;
+        right: 0;
+    }
+}
