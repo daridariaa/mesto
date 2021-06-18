@@ -1,0 +1,7 @@
+.photo-expanded__container {
+    max-width: 75vw;
+    max-height: 75vh;
+    width: auto;
+    background-color: transparent;
+    border-radius: 0;
+}

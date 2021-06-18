@@ -36,26 +36,6 @@
 @import url(../blocks/elements/__pic-image/elements__pic-image.css);
 @import url(../blocks/popup/__container/popup__container.css);
 @import url(../blocks/elements/__delete-button/elements__delete-button.css);
-
-
-.photo-expanded__container {
-    max-width: 75vw;
-    max-height: 75vh;
-    width: auto;
-    background-color: transparent;
-    border-radius: 0;
-}
-
-.photo-expanded__title {
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 15px;
-    color: #FFFFFF;
-    margin: 0;
-    padding-top: 10px;
-}
-
-.photo-expanded__image {
-    max-height: 75vh;
-    max-width: 75vw;
-}
+@import url(../blocks/photo-expanded/__container/photo-expanded__container.css);
+@import url(../blocks/photo-expanded/__title/photo-expanded__title.css);
+@import url(../blocks/photo-expanded/__image/photo-expanded__image.css);
