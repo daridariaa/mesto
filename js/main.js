@@ -13,6 +13,7 @@ const addPhotoButton = document.querySelector('.profile__add-button');
 const photoNameInput = document.querySelector('.edit-form__photo-title');
 const photoLinkInput = document.querySelector('.edit-form__photo-link');
 const addPhotoForm = document.querySelector('.add-photo-form');
+const popupPhotoExpanded = document.querySelector('.popup-photo-expanded');
 
 const initialCards = [
     {
@@ -50,6 +51,7 @@ function openPopup() {
 function closePopup() {
     popupEditProfile.classList.remove('popup_opened');
     popupAddPhoto.classList.remove('popup_opened');
+    popupPhotoExpanded.classList.remove('popup_opened');
     photoLinkInput.value = '';
     photoNameInput.value = '';
 }
@@ -76,6 +78,15 @@ function createCard(name, link, toFront) {
     deleteButton.addEventListener('click', function() {
         const card = deleteButton.closest('.elements__element');
         card.remove();
+        }
+    );
+
+    const image = cardElement.querySelector('.elements__pic-image');
+    image.addEventListener('click', function() {
+            popupPhotoExpanded.classList.add('popup_opened');
+            popupPhotoExpanded.querySelector('.photo-expanded__image').src = image.src;
+            popupPhotoExpanded.querySelector('.photo-expanded__image').alt = image.alt;
+            popupPhotoExpanded.querySelector('.photo-expanded__title').textContent = image.alt;
         }
     );
 
