@@ -8,6 +8,7 @@
     right: 15px;
     border: none;
     cursor: pointer;
+    background-repeat: no-repeat;
 }
 
 .elements__delete-button:hover {
