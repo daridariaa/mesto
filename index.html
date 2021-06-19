@@ -40,11 +40,11 @@
 
         <div class="popup popup-edit-profile">
             <div class="popup__container">
-                <form class="edit-form change-profile-form" name="change-profile-form">
+                <form class="edit-form change-profile-form" name="change-profile-form" novalidate>
                     <h3 class="edit-form__title">Редактировать профиль</h3>
                     <div class="edit-form__container">
-                        <input class="edit-form__input edit-form__name" name="profile-name" type="text" placeholder="Имя" />
-                        <input class="edit-form__input edit-form__occupation" name="profile-occupation" type="text" placeholder="Описание" />
+                        <input class="edit-form__input edit-form__name" name="profile-name" type="text" placeholder="Имя" minlenght="2" maxlength="40" required />
+                        <input class="edit-form__input edit-form__occupation" name="profile-occupation" type="text" placeholder="Описание" minlenght="2" maxlength="200" required />
                     </div>
                     <button type="submit" class="edit-form__submit-button">Сохранить</button>
                     <button type="button" class="edit-form__close-button close-button"></button>
@@ -55,11 +55,11 @@
 
         <div class="popup popup-add-photo">
             <div class="popup__container">
-                <form class="edit-form add-photo-form" name="add-photo-form">
+                <form class="edit-form add-photo-form" name="add-photo-form" novalidate>
                     <h3 class="edit-form__title">Новое место</h3>
                     <div class="edit-form__container">
-                        <input class="edit-form__input edit-form__photo-title" name="photo-title" type="text" placeholder="Название" />
-                        <input class="edit-form__input edit-form__photo-link" name="photo-link" type="text" placeholder="Ссылка на картинку" />
+                        <input class="edit-form__input edit-form__photo-title" name="photo-title" type="text" placeholder="Название"/>
+                        <input class="edit-form__input edit-form__photo-link" name="photo-link" type="url" placeholder="Ссылка на картинку" />
                     </div>
                     <button type="submit" class="edit-form__submit-button">Сохранить</button>
                     <button type="button" class="edit-form__close-button close-button"></button>
