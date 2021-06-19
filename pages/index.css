@@ -40,3 +40,6 @@
 @import url(../blocks/photo-expanded/__title/photo-expanded__title.css);
 @import url(../blocks/photo-expanded/__image/photo-expanded__image.css);
 @import url(../blocks/photo-expanded/__close-button/photo-expanded__close-button.css);
+@import url(../blocks/edit-form/__input/_type/edit-form__input_type_error.css);
+@import url(../blocks/edit-form/__error/_active/edit-form__error_active.css);
+@import url(../blocks/edit-form/__submit-button/_inactive/edit-form__submit-button_inactive.css);

@@ -2,6 +2,7 @@ const popupEditProfile = document.querySelector('.popup-edit-profile');
 const popupAddPhoto = document.querySelector('.popup-add-photo');
 const editProfileButton = document.querySelector('.profile__edit-button');
 const closePopupButtons = document.querySelectorAll('.close-button');
+const popupOverlays = document.querySelectorAll('.popup');
 const profileName = document.querySelector('.profile__name');
 const profileOccupation = document.querySelector('.profile__description');
 const nameInput = document.querySelector('.edit-form__name');
@@ -44,9 +45,15 @@ const initialCards = [
     }
 ];
 
-function openEditProfilePopup() {
+function preFillProfileInputs() {
     nameInput.value = profileName.textContent;
     occupationInput.value = profileOccupation.textContent;
+    nameInput.dispatchEvent(new Event('input'));
+    occupationInput.dispatchEvent(new Event('input'));
+}
+
+function openEditProfilePopup() {
+    preFillProfileInputs();
     openPopup(popupEditProfile);
 }
 
@@ -62,12 +69,15 @@ function submitEditProfilePopup(evt) {
 }
 
 function openPopup(popup) {
+    resetErrors(popup.querySelector(config.formSelector));
     popup.classList.add('popup_opened');
 }
 
 function openAddPhotoForm() {
     photoLinkInput.value = '';
     photoNameInput.value = '';
+    photoLinkInput.dispatchEvent(new Event('input'));
+    photoNameInput.dispatchEvent(new Event('input'));
     openPopup(popupAddPhoto);
 }
 
@@ -117,17 +127,40 @@ function handleClosePopupButton(evt) {
     closePopup(evt.target.closest('.popup'));
 }
 
+function handlePopupOverlayClick(evt) {
+    const popup = evt.target;
+    if (popup.classList.contains('popup')) {
+        closePopup(popup.closest('.popup'));
+    }
+}
+
+function handleEscPress(evt) {
+    if (evt.key === "Escape") {
+        const activePopup = document.querySelector('.popup_opened');
+        if (activePopup) {
+            closePopup(activePopup);
+        }
+    }
+}
+
 editProfileButton.addEventListener('click', openEditProfilePopup);
 
 closePopupButtons.forEach(function(button){
     button.addEventListener('click', handleClosePopupButton);
 });
 
+popupOverlays.forEach((overlay) => {
+    overlay.addEventListener('click', handlePopupOverlayClick);
+});
+
 editProfileForm.addEventListener('submit', submitEditProfilePopup);
 addPhotoButton.addEventListener('click', openAddPhotoForm);
 addPhotoForm.addEventListener('submit', submitAddPhotoForm);
+document.addEventListener('keydown', handleEscPress);
 
 initialCards.forEach(function(card) {
     const cardElement = createCard(card.name, card.link);
     addCard(cardElement, false);
 });
+
+enableValidation();

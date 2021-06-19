@@ -43,8 +43,10 @@
                 <form class="edit-form change-profile-form" name="change-profile-form" novalidate>
                     <h3 class="edit-form__title">Редактировать профиль</h3>
                     <div class="edit-form__container">
-                        <input class="edit-form__input edit-form__name" name="profile-name" type="text" placeholder="Имя" minlenght="2" maxlength="40" required />
-                        <input class="edit-form__input edit-form__occupation" name="profile-occupation" type="text" placeholder="Описание" minlenght="2" maxlength="200" required />
+                        <input class="edit-form__input edit-form__name" id="name-input" name="profile-name" type="text" placeholder="Имя" minlength="2" maxlength="40" required />
+                        <span class="edit-form__input-error name-input-error"></span>
+                        <input class="edit-form__input edit-form__occupation" id="occupation-input" name="profile-occupation" type="text" placeholder="Описание" minlength="2" maxlength="200" required />
+                        <span class="edit-form__input-error occupation-input-error"></span>
                     </div>
                     <button type="submit" class="edit-form__submit-button">Сохранить</button>
                     <button type="button" class="edit-form__close-button close-button"></button>
@@ -58,8 +60,10 @@
                 <form class="edit-form add-photo-form" name="add-photo-form" novalidate>
                     <h3 class="edit-form__title">Новое место</h3>
                     <div class="edit-form__container">
-                        <input class="edit-form__input edit-form__photo-title" name="photo-title" type="text" placeholder="Название"/>
-                        <input class="edit-form__input edit-form__photo-link" name="photo-link" type="url" placeholder="Ссылка на картинку" />
+                        <input class="edit-form__input edit-form__photo-title" id="photo-title-input" name="photo-title" type="text" minlength="1" maxlength="30" placeholder="Название" required />
+                        <span class="edit-form__input-error photo-title-input-error"></span>
+                        <input class="edit-form__input edit-form__photo-link" id="photo-link-input" name="photo-link" type="url" placeholder="Ссылка на картинку" required />
+                        <span class="edit-form__input-error photo-link-input-error"></span>
                     </div>
                     <button type="submit" class="edit-form__submit-button">Сохранить</button>
                     <button type="button" class="edit-form__close-button close-button"></button>
@@ -88,6 +92,7 @@
             </div>
         </template>
 
+        <script src="./js/validate.js"></script>
         <script src="./js/main.js"></script>
     </body>
 </html>
