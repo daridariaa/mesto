@@ -18,6 +18,8 @@ const popupPhotoExpanded = document.querySelector('.popup-photo-expanded');
 const photoExpandedImage = popupPhotoExpanded.querySelector('.photo-expanded__image');
 const photoExpandedTitle = popupPhotoExpanded.querySelector('.photo-expanded__title');
 
+let escPressHandler = null;
+
 const initialCards = [
     {
         name: 'Архыз',
@@ -59,6 +61,7 @@ function openEditProfilePopup() {
 
 function closePopup(popup) {
     popup.classList.remove('popup_opened');
+    document.removeEventListener('keydown', escPressHandler);
 }
 
 function submitEditProfilePopup(evt) {
@@ -71,6 +74,12 @@ function submitEditProfilePopup(evt) {
 function openPopup(popup) {
     resetErrors(popup.querySelector(config.formSelector));
     popup.classList.add('popup_opened');
+    escPressHandler = (evt) => {
+        if (evt.key === "Escape") {
+            closePopup(popup);
+        }
+    }
+    document.addEventListener('keydown', escPressHandler);
 }
 
 function openAddPhotoForm() {
@@ -134,15 +143,6 @@ function handlePopupOverlayClick(evt) {
     }
 }
 
-function handleEscPress(evt) {
-    if (evt.key === "Escape") {
-        const activePopup = document.querySelector('.popup_opened');
-        if (activePopup) {
-            closePopup(activePopup);
-        }
-    }
-}
-
 editProfileButton.addEventListener('click', openEditProfilePopup);
 
 closePopupButtons.forEach(function(button){
@@ -156,7 +156,6 @@ popupOverlays.forEach((overlay) => {
 editProfileForm.addEventListener('submit', submitEditProfilePopup);
 addPhotoButton.addEventListener('click', openAddPhotoForm);
 addPhotoForm.addEventListener('submit', submitAddPhotoForm);
-document.addEventListener('keydown', handleEscPress);
 
 initialCards.forEach(function(card) {
     const cardElement = createCard(card.name, card.link);
