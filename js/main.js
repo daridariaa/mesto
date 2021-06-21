@@ -18,8 +18,6 @@ const popupPhotoExpanded = document.querySelector('.popup-photo-expanded');
 const photoExpandedImage = popupPhotoExpanded.querySelector('.photo-expanded__image');
 const photoExpandedTitle = popupPhotoExpanded.querySelector('.photo-expanded__title');
 
-let escPressHandler = null;
-
 const initialCards = [
     {
         name: 'Архыз',
@@ -55,13 +53,14 @@ function preFillProfileInputs() {
 }
 
 function openEditProfilePopup() {
+    resetErrors(popupEditProfile.querySelector(config.formSelector), config);
     preFillProfileInputs();
     openPopup(popupEditProfile);
 }
 
 function closePopup(popup) {
     popup.classList.remove('popup_opened');
-    document.removeEventListener('keydown', escPressHandler);
+    document.removeEventListener('keydown', handleEscPress);
 }
 
 function submitEditProfilePopup(evt) {
@@ -71,15 +70,16 @@ function submitEditProfilePopup(evt) {
     closePopup(popupEditProfile);
 }
 
-function openPopup(popup) {
-    resetErrors(popup.querySelector(config.formSelector));
-    popup.classList.add('popup_opened');
-    escPressHandler = (evt) => {
-        if (evt.key === "Escape") {
-            closePopup(popup);
-        }
+function handleEscPress(evt) {
+    const openedPopup = document.querySelector('.popup_opened');
+    if (evt.key === "Escape" && openedPopup) {
+        closePopup(openedPopup);
     }
-    document.addEventListener('keydown', escPressHandler);
+}
+
+function openPopup(popup) {
+    popup.classList.add('popup_opened');
+    document.addEventListener('keydown', handleEscPress);
 }
 
 function openAddPhotoForm() {
@@ -87,6 +87,7 @@ function openAddPhotoForm() {
     photoNameInput.value = '';
     photoLinkInput.dispatchEvent(new Event('input'));
     photoNameInput.dispatchEvent(new Event('input'));
+    resetErrors(popupAddPhoto.querySelector(config.formSelector), config);
     openPopup(popupAddPhoto);
 }
 
@@ -150,7 +151,7 @@ closePopupButtons.forEach(function(button){
 });
 
 popupOverlays.forEach((overlay) => {
-    overlay.addEventListener('click', handlePopupOverlayClick);
+    overlay.addEventListener('mousedown', handlePopupOverlayClick);
 });
 
 editProfileForm.addEventListener('submit', submitEditProfilePopup);
@@ -162,4 +163,4 @@ initialCards.forEach(function(card) {
     addCard(cardElement, false);
 });
 
-enableValidation();
+enableValidation(config);
